@@ -35,8 +35,7 @@ module.exports = {
     "react/jsx-props-no-spreading": [{
       "html": "ignore" | "enforce",
       "custom": "ignore" | "enforce",
-      "explicitSpread": "ignore" | "enforce",
-      "exceptions": [<string>]
+      "explicitSpread": "ignore" | "enforce"
   }]
   },
   settings: {
@@ -46,4 +45,4 @@ module.exports = {
       },
     },
   },
-};
+}
