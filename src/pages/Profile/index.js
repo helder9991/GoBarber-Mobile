@@ -3,9 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Background from '~/components/Background';
-import { updateProfileRequest } from '~/store/modules/user/actions';
 
-import { Container, Title, Separator, Form, FormInput, SubmitButton } from './styles';
+import { updateProfileRequest } from '~/store/modules/user/actions';
+import { signOut } from '~/store/modules/auth/actions';
+
+import {
+    Container,
+    Title,
+    Separator,
+    Form,
+    FormInput,
+    SubmitButton,
+    LogoutButton
+  } from './styles';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -37,6 +47,10 @@ export default function Profile() {
       password,
       confirmPassword
     }))
+  }
+
+  function handleLogout() {
+    dispatch(signOut());
   }
 
   return (
@@ -104,6 +118,7 @@ export default function Profile() {
             />
 
             <SubmitButton onPress={handleSubmit}>Atualizar Perfil</SubmitButton>
+            <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
         </Form>
       </Container>
     </Background>
