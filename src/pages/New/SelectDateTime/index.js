@@ -9,3 +9,7 @@ export default function SelectDateTime() {
     <Background />
   );
 }
+
+SelectDateTime.navigationOptions = {
+  title: 'Selecione o horário'
+}
